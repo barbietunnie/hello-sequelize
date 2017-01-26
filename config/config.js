@@ -11,7 +11,7 @@ module.exports = {
     "url": process.env.DATABASE_URL,
     "dialect": "mysql"
   }, 
-  production: {
+  "production": {
     "url": process.env.DATABASE_URL,
     "dialect": "mysql"
   }
