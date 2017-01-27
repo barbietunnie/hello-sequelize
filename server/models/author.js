@@ -12,7 +12,10 @@ module.exports = function(sequelize, DataTypes) {
     underscored: true,
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        // An author can have many books
+        Author.hasMany(models.Book, {
+          onDelete: 'cascade'
+        });
       }
     }
   });
