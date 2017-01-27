@@ -5,6 +5,7 @@ module.exports = {
     // Get a list of all authors using model.findAll()
     index(req, res) {
         Author.findAll({
+            //Return all books that have a matching author_id for each Author
             include: Book
         }).then((authors) => {
             res.status(200).json(authors);
@@ -16,6 +17,7 @@ module.exports = {
     // Get an author with the unique ID using model.findById()
     show(req, res) {
         Author.findById(req.params.id, {
+            //Return all books that have a matching author_id for the author
             include: Book
         }).then((author) => {
             res.status(200).json(author);

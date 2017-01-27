@@ -1,10 +1,9 @@
-var models = require('./server/models/');
+var app = require('express')(),
+    authors = require('./server/controllers/authors');
 
-models.sequelize
-      .authenticate()
-      .then(() => {
-          console.log('Connection successful');
-      })
-      .catch((error) => {
-          console.error('Error creating connection: ' + error)
-      });
+app.get('/authors', authors.index);
+
+app.set('port', process.env.PORT || 8000);
+app.listen(app.get('port'), () => {
+    console.log('Server started at http://localhost:' + app.get('port'));
+})
