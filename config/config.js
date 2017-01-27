@@ -1,6 +1,7 @@
 module.exports = {
   "development": {
     "url": "sqlite://demo.sqlite",
+    "storage": "./data/demo.sqlite",
     "dialect": "sqlite"
   },
   "test": {
